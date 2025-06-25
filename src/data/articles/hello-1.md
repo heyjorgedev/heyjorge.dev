@@ -1,5 +1,6 @@
 ---
-title: "The greatest post of all time"
+title: "Cloud is the best, but..."
+short: "Short description"
 ---
 
 Here is my _great_ post!

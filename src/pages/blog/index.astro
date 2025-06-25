@@ -1,18 +1,26 @@
 ---
 import { getCollection } from "astro:content";
+import MainLayout from "../../layouts/main-layout.astro";
 
 const articles = await getCollection("articles");
 ---
 
-<div>
-  <h1>Blog</h1>
-  <ul>
+<MainLayout title="Blog">
+  <h1 class="text-3xl font-bold pb-12 font-serif">Blog</h1>
+  <div class="grid divide-y divide-black/20">
     {
       articles.map((article) => (
-        <li>
-          <a href={`/blog/${article.id}`}>{article.data.title}</a>
-        </li>
+        <div class="relative py-6 group">
+          <h2 class="font-serif text-xl group-hover:text-green-700">
+            <a href={`/blog/${article.id}`}>
+              <span class="absolute inset-0" aria-hidden="true" />
+              {article.data.title}
+            </a>
+          </h2>
+
+          <p class="text-black/60 text-sm">{article.data.short}</p>
+        </div>
       ))
     }
-  </ul>
-</div>
+  </div>
+</MainLayout>
