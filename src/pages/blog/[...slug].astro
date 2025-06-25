@@ -24,7 +24,9 @@ const { Content } = await render(article);
   >
     {article.data.title}
   </h1>
-  <article class="prose prose-sm prose-headings:font-serif max-w-none">
+  <article
+    class="prose dark:prose-invert prose-sm prose-headings:font-serif max-w-none"
+  >
     <Content />
   </article>
 </MainLayout>

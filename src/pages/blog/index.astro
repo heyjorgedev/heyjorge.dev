@@ -7,7 +7,7 @@ const articles = await getCollection("articles");
 
 <MainLayout title="Blog">
   <h1 class="text-3xl font-bold pb-12 font-serif">Blog</h1>
-  <div class="grid divide-y divide-black/20">
+  <div class="grid divide-y divide-black/20 dark:divide-white/20">
     {
       articles.map((article) => (
         <div class="relative py-6 group">
@@ -21,7 +21,9 @@ const articles = await getCollection("articles");
             </a>
           </h2>
 
-          <p class="text-black/60 text-sm">{article.data.short}</p>
+          <p class="text-black/60 dark:text-white/60 text-sm">
+            {article.data.short}
+          </p>
         </div>
       ))
     }
