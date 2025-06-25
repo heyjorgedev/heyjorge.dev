@@ -11,7 +11,10 @@ const articles = await getCollection("articles");
     {
       articles.map((article) => (
         <div class="relative py-6 group">
-          <h2 class="font-serif text-xl group-hover:text-green-700" transition:name={`blog-${article.id}-title`}></h2>
+          <h2
+            class="font-serif text-xl group-hover:text-green-700"
+            transition:name={`blog-${article.id}-title`}
+          >
             <a href={`/blog/${article.id}`}>
               <span class="absolute inset-0" aria-hidden="true" />
               {article.data.title}
