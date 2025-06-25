@@ -13,11 +13,17 @@ export async function getStaticPaths() {
 
 type Props = CollectionEntry<"articles">;
 
-const post = Astro.props;
-const { Content } = await render(post);
+const article = Astro.props;
+const { Content } = await render(article);
 ---
 
-<MainLayout title={post.data.title}>
+<MainLayout title={article.data.title}>
+  <h1
+    class="text-3xl font-bold pb-12 font-serif"
+    transition:name={`blog-${article.id}-title`}
+  >
+    {article.data.title}
+  </h1>
   <article class="prose prose-sm prose-headings:font-serif max-w-none">
     <Content />
   </article>
